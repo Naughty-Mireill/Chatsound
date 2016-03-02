@@ -1,0 +1,12 @@
+user:
+  ccc54a6c-1c87-4064-a299-90857fb16a5c:
+    pitch: 0
+    volume: 0
+group:
+  newbie:
+    pitch: 1
+    sound: none
+    volume: 1
+sounds:
+  chicken: chicken_idle
+  orb: orb_pickup
