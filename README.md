@@ -10,6 +10,10 @@ Usage for jar:
 6: now try to chat! awesome pop!!
 
 issue:
-  - default config is broken :/
-  - only same world players can listen player chat sound (update soon!)
+  - default config is broken :/ (maibe)
   - i am using for code on chat event. it cause lagg everything :/
+
+fixed when 2016/03/02/22:48
+
+ - groupsound issue
+ - now we can listen sound every world (serverwide)
