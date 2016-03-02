@@ -6,6 +6,7 @@ import net.TouhouMC.noteumaple.Chatsound.Chatsound;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -48,13 +49,15 @@ implements Listener {
             }
             return;
         } 
-			for ( String group : conf.getConfigurationSection("group").getKeys(false)) {
-                if (conf.getString("group." + group.toLowerCase() + ".sound") == null || !pl.hasPermission("chatsound.group." + group.toLowerCase())) continue;
-                soundcutname = conf.getString("group." + group.toLowerCase() + ".sound");
+		ConfigurationSection groups = conf.getConfigurationSection("group");
+			for ( String group1 : groups.getKeys(false)) {
+				ConfigurationSection group = groups.getConfigurationSection(group1);
+                if (group.getString("sound") == null || !pl.hasPermission("chatsound.group." + group1.toLowerCase())) continue;
+                soundcutname = group.getString("sound");
                 soundfullname = conf.getString("sounds." + soundcutname);
                 if (soundfullname == null) continue;
-                volume = conf.getInt("group." + pl.getUniqueId() + ".volume");
-                pitch = conf.getInt("group." + pl.getUniqueId() + ".pitch");
+                volume = group.getInt("volume");
+                pitch = group.getInt("pitch");
                 if (Sound.valueOf((String)soundfullname.toUpperCase()) == null) continue;
                 for (Player lpl : Bukkit.getServer().getOnlinePlayers()) {
                         if (!lpl.hasPermission("chatsound.listen")) continue;
