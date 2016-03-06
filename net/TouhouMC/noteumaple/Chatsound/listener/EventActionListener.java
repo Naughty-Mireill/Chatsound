@@ -19,7 +19,6 @@ implements Listener {
     static String pluginpre = Chatsound.chatsound_pre;
     static File config = Chatsound.configfile;
     static FileConfiguration conf = Chatsound.conf;
-
     public EventActionListener(Chatsound plugin) {
         plugin.getServer().getPluginManager().registerEvents((Listener)this, (Plugin)plugin);
     }

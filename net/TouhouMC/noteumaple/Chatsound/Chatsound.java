@@ -61,7 +61,7 @@ public class Chatsound extends JavaPlugin implements Listener {
                     return true;
                 } else if (args[0].equalsIgnoreCase("help")) {
                     if (p.hasPermission("chatsound.help") || p.hasPermission("chatsound.user")) {
-                        sender.sendMessage(chatsound_pre + ChatColor.GOLD + "\u53ef\u80fd\u306a\u30b3\u30de\u30f3\u30c9\u4e00\u89a7");
+                        sender.sendMessage(chatsound_pre + ChatColor.GOLD + "ƒRƒ}ƒ“ƒhˆê——");
                         sender.sendMessage(chatsound_pre + ChatColor.AQUA + "chatsound : \u30d0\u30fc\u30b8\u30e7\u30f3\u8aac\u660e");
                         sender.sendMessage(chatsound_pre + ChatColor.AQUA + "chatsound usersound <playername> <soundname> [volume] [pitch]: \u30d7\u30ec\u30a4\u30e4\u30fc\u306e\u767a\u3059\u308b\u30c1\u30e3\u30c3\u30c8\u97f3\u3092\u8a2d\u5b9a\u3059\u308b");
                         sender.sendMessage(chatsound_pre + ChatColor.AQUA + "chatsound groupsound <groupname> <soundname> [volume] [pitch]: \u30b0\u30eb\u30fc\u30d7\u306e\u767a\u3059\u308b\u30c1\u30e3\u30c3\u30c8\u97f3\u3092\u8a2d\u5b9a\u3059\u308b");
@@ -160,5 +160,6 @@ public class Chatsound extends JavaPlugin implements Listener {
     public static void reloadTMCConfig() {
         configfile = new File(pluginDir, "config.yml");
         conf = YamlConfiguration.loadConfiguration(configfile);
+        SaveTMCConfig();
     }
 }

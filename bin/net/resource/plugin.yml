@@ -1,0 +1,8 @@
+name: Chatsound
+main: net.TouhouMC.noteumaple.Chatsound.Chatsound
+author: noteumaple
+version: 0.9
+commands:
+   chatsound:
+      description: Base Command
+      aliases: [ctc,csound]
